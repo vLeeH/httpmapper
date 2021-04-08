@@ -8,6 +8,7 @@ import urllib.parse
 from collections import deque
 import re
 from bs4 import *
+
 try:
     import requests
     import http.cookiejar
@@ -33,7 +34,7 @@ header = {
 
 
 def extract_websites(alvo):
-    # Extract source codes of websites.
+    # Extract source code.
     print('\033[1;36m+------------------------------------------+\033[0m')
     print('\033[1;36m[+] Extacting WebServer:\033[0m')
     if alvo.startswith('http' or 'https'): 
