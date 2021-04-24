@@ -1,5 +1,6 @@
-#!/usr/bin/python
-# -- coding utf-8 --
+#!/usr/bin/env python3
+
+# -*- coding utf-8 -*-
 
 from httpmapper import *
 import time
@@ -8,7 +9,7 @@ banner()
 alvo = str(input('[*] Enter the website URL: ')).lower().strip()
 
 
-def start():
+def main():
     time.sleep(0.50)
     ask = str(input('[*] What do you want to know?[Website/Links/Navigate/Emails/Cookies/Grabbing] ')).lower().strip()
 
@@ -35,6 +36,7 @@ def start():
     
     elif options == 'N': 
         banner()
+        print('\033[31m [+] Thanks for using the tool.\033[0m')
         exit()
 
     else: 
@@ -43,4 +45,4 @@ def start():
 
 
 if __name__ == '__main__':
-    start()
+    main()

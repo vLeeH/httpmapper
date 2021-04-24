@@ -1,6 +1,6 @@
-#!/usr/bin/python
-# -*- coding utf-8 -*-
+#!/usr/bin/env python3
 
+# -*- coding utf-8 -*-
 import os
 import time
 import urllib.request
@@ -8,35 +8,51 @@ import urllib.parse
 from collections import deque
 import re
 from bs4 import *
-try:
-    import requests
-    import http.cookiejar
-except ImportError: 
-    os.system("pip install -r requirements.txt")
+import requests
+import http.cookiejar
 
+__version__='v0.1.2'
+__author__='vLeeH'
+
+class Colors: 
+    red = "\033[91;1m"
+    reset = "\033[0m"
+    green = "\033[92;1m"
+    cyan = "\033[96;1m"
+    yellow = "\033[93;1m"
+    magenta = "\033[95;1m"
+    blue = "\033[94;1m"
+    white = "\033[97;1m"
+    blink = "\033[5m"
 
 def banner():
     os.system("cls" if os.name == "nt" else "clear")
-    print('''\033[31m
+    print(f'''\033[31m
         | |__ | |_| |_ _ __  _ __ ___   __ _ _ __  _ __   ___ _ __ 
         | '_ \| __| __| '_ \| '_ ` _ \ / _` | '_ \| '_ \ / _ \ '__|
         | | | | |_| |_| |_) | | | | | | (_| | |_) | |_) |  __/ |   
         |_| |_|\__|\__| .__/|_| |_| |_|\__,_| .__/| .__/ \___|_|   
-                      |_|                   |_|   |_|              
+                      |_|                   |_|   |_|  
+        {Colors.cyan}       
+        Github: https://github.com/vLeeH/httpmapper
+        By: {__author__}
+        Version: {__version__}
+   
     \033[0m''')
 
 
-# Identify which browser is being used
+# Identify which browser is being used - Windows
+# You can change that for Linux
 header = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36'
 }
 
-
 def extract_websites(alvo):
     '''Extract source codes of websites.'''
-    print('\033[1;36m+------------------------------------------+\033[0m')
-    print('\033[1;36m[+] Extacting WebServer:\033[0m')
-    if alvo.startswith('http' or 'https'): 
+    print('+------------------------------------------+')
+    print('[+] Extacting WebServer:')
+    print()
+    if alvo.startswith('http'): 
         try: 
             source = requests.get(alvo).text
             soup = BeautifulSoup(source, 'lxml')
@@ -63,8 +79,9 @@ def extract_title(content):
 
 def extract_links(content):
     '''Get links of URL's'''
-    print('\033[1;36m+------------------------------------------+\033[0m')
-    print('\033[1;36m[+] Extracting links:\033[0m')
+    print('+------------------------------------------+')
+    print('[+] Extacting links:')
+    print()
     soup = BeautifulSoup(content, "lxml")
     links = set()  # Array but don't allow multiples elements
     for tag in soup.find_all("a", href=True):
@@ -75,8 +92,9 @@ def extract_links(content):
 
 def get_links(alvo):
     '''Create a log for links that are in the URL'''
-    print('\033[1;36m+------------------------------------------+\033[0m')
-    print('\033[1;36m[+] Analizing links:\033[0m')
+    print('+------------------------------------------+')
+    print('[+] Analyzing links:')
+    print()
     page = requests.get(alvo)
     links = extract_links(page.text)
     for link in links: 
@@ -87,8 +105,9 @@ def get_links(alvo):
 
 def navigate_links(alvo):
     '''Function that navigate websites just using one URL.'''
-    print('\033[1;36m+------------------------------------------+\033[0m')
-    print('\033[1;36m[+] Starting the Navigate function:\033[0m')
+    print('+------------------------------------------+')
+    print('[+] Starting the navigate function.:')
+    print()
     seen_urls = [alvo]
     available_urls = [alvo]
     while available_urls:
@@ -120,9 +139,10 @@ def extract_emails(alvo):
     '''See URL's and emails.'''
     global emails
     try:
-        print('\033[1;36m+------------------------------------------+\033[0m')
-        print('\033[1;36m[+] Extracting emails:\033[0m')
-        if alvo.startswith('http' or 'https'):
+        print('+------------------------------------------+')
+        print('[+] Extacting emails.:')
+        print()
+        if alvo.startswith('http'):
             try:
                 urls = deque([alvo])
                 count = 0
@@ -181,7 +201,7 @@ def extract_emails(alvo):
 
 def extract_cookies(alvo):
     '''Get name and values of emails.'''
-    if alvo.startswith('http' or 'https'):
+    if alvo.startswith('http'):
         try: 
             cookie_jar = http.cookiejar.CookieJar()
             url_opner = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookie_jar))
@@ -207,15 +227,18 @@ def extract_cookies(alvo):
 
 def website_grabber(alvo, cookie):
     '''Grab metadatas using URL and the Cookie.'''
-    print('\033[1;36m+------------------------------------------+\033[0m')
-    print('\033[1;36m[+] Analyzing Metadatas:\033[0m')
-    if alvo.startswith('http' or 'https'):
+    print('+------------------------------------------+')
+    print('[+] Analyzing Metadatas.')
+    print()
+    if alvo.startswith('http'):
         try: 
             esc = str(input("[*] GET or POST: ")).strip().lower() 
             if esc == 'post':
                 req = requests.post(alvo, cookies={'Cookie':cookie}, headers=header)
-            else:
+            elif esc == 'get':
                 req = requests.get(alvo, cookies={'Cookie':cookie}, headers=header)
+            else: 
+                print('[!] Enter an avaible anwser.')
 
             code = req.status_code
             if code == 200:
@@ -237,3 +260,4 @@ def website_grabber(alvo, cookie):
             print('[-] Website grabber finished!')
     else: 
         print('[-] Invalid URL.')
+
