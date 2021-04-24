@@ -32,7 +32,7 @@ def main():
     options = str(input('Do you want to make a consultation again?[Y/N] ')).upper().strip()
     if options == 'Y':
         banner()
-        start()
+        main()
     
     elif options == 'N': 
         banner()
