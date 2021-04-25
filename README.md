@@ -20,11 +20,6 @@
 - [X] See Cookies of a Website.
 - [X] Grab metadatas.
 
-## OS Support
-- Windows ✔️
-- Linux ✔️
-- Mac ❓
-
 ## How to install
 Clone this repository `git clone https://github.com/vLeeH/httpmapper.git`
 - Install python 3.
@@ -39,6 +34,11 @@ Clone this repository `git clone https://github.com/vLeeH/httpmapper.git`
       - `python -m pip install -r requirements.txt`
       - `python install.py`
       - Done.
+
+## OS - support
+- Linux ✔️
+- Windows ✔️
+- Mac ❓
 
 ## How it works
 Firstable run the file `install.py` and enter the website URL.
