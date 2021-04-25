@@ -24,7 +24,8 @@ def main():
     elif ask == 'cookies':
         extract_cookies(alvo)
     elif ask == 'grabbing':
-        website_grabber(alvo)
+        c = str(input('[*] Enter the website cookie: '))
+        website_grabber(alvo, c)
     else: 
         print('[-] Enter a valid answer.')
 
@@ -32,7 +33,7 @@ def main():
     options = str(input('Do you want to make a consultation again?[Y/N] ')).upper().strip()
     if options == 'Y':
         banner()
-        start()
+        main()
     
     elif options == 'N': 
         banner()

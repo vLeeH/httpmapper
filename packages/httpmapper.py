@@ -10,6 +10,7 @@ import re
 from bs4 import *
 import requests
 import http.cookiejar
+from time import sleep 
 
 __version__='v0.1.2'
 __author__='vLeeH'
@@ -100,7 +101,7 @@ def get_links(alvo):
     for link in links: 
         print(link)
         with open('links.txt', 'at+', encoding="utf8") as t: 
-            t.write(f"{links} \n\r")
+            t.write(f"{link} \n\r")
 
 
 def navigate_links(alvo):
