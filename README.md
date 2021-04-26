@@ -35,7 +35,7 @@ Clone this repository `git clone https://github.com/vLeeH/httpmapper.git`
       - `python install.py`
       - Done.
 
-## OS - support
+## OS Support
 - Linux ✔️
 - Windows ✔️
 - Mac ❓
