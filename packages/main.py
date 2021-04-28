@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 
 # -*- coding utf-8 -*-
-
 from httpmapper import *
 import time
 
 banner()
 alvo = str(input('[*] Enter the website URL: ')).lower().strip()
 
-
 def main():
-    time.sleep(0.50)
+    time.sleep(0.5)
     ask = str(input('[*] What do you want to know?[Website/Links/Navigate/Emails/Cookies/Grabbing] ')).lower().strip()
 
     if ask == 'website': 
@@ -24,8 +22,8 @@ def main():
     elif ask == 'cookies':
         extract_cookies(alvo)
     elif ask == 'grabbing':
-        c = str(input('[*] Enter the website cookie: '))
-        website_grabber(alvo, c)
+        cookie = str(input('[*] Enter the website cookie: '))
+        website_grabber(alvo, cookie)
     else: 
         print('[-] Enter a valid answer.')
 
