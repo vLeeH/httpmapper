@@ -1,47 +1,49 @@
-<h1 align="center">Mail Brute Force 📧</h1>
+<h1 align="center">httpmapper 👁️</h1>
 
 <p align="center">
-   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/vleeh/MailBrute-Py">
-
-   <img alt="Repository size" src="https://img.shields.io/github/repo-size/vleeh/MailBrute-Py">
-
-   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/vleeh/MailBrute-Py">
-
    <img alt="Language" src="https://img.shields.io/badge/Python-3.7%20%7C%203.8-blue.svg"> 
-    
-   <img alt="License" src="https://img.shields.io/github/license/vLeeH/Mail-Bruteforce.svg">
+   <img alt="Made by vLeeH" src="https://img.shields.io/badge/made%20by-vLeeH-green">
+   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/vleeh/httpmapper">
+   <img alt="Repository size" src="https://img.shields.io/github/repo-size/vleeh/httpmapper">
+   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/vleeh/httpmapper">
+   <img alt="License" src="https://img.shields.io/github/license/vLeeH/httpmapper.svg">
 </p>
 
-<p align="center">
-    <img src="https://github.com/vLeeH/MailBrute-Py/blob/main/.thumb/example.png">
-</p>
+<img align="center" src="https://github.com/vLeeH/httpmapper/blob/main/demo/example.png">
 
-## What is this? 
-<strong>MailBrute-Py</strong> script for email bruteforce and that send HTML messages.
+## What is this?
+**httpmapper** is a web crawler made in Python.
+- [X] Source code of an URL.
+- [X] Links of a Website.
+- [X] Navigate in the web just using an URL.
+- [X] Get e-mails of a Website.
+- [X] See Cookies of a Website.
+- [X] Grab metadatas.
 
-- [x] See the password of the email inputed.
-- [x] Send Computer Informations, IPs, HTML messages and files
+## OS Support
+- Windows ✔️
+- Linux ✔️
+- Mac ❓
 
-## Usage
-_Python_ - `3.8`
+## How to install
+Clone this repository `git clone https://github.com/vLeeH/httpmapper.git`
+- Install python 3.
+   - Linux
+      - `apt-get install python3`
+      - `chmod +x *`
+      - `python -m pip install -r requirements.txt`
+      - `python install.py`
+      - Done.
+   - Windows
+      - [Python 3, download and install](https://www.python.org/downloads/)
+      - `python -m pip install -r requirements.txt`
+      - `python install.py`
+      - Done.
 
-Installation:
-```
-git clone https://github.com/vLeeH/MailSender.git
-```
-Open and run the tool:
-```
-cd MailBrute-Py
-python main.py
-```
-Then you just need to enter the email, and if you want, your wordlist either.
+## How it works
+Firstable run the file `install.py` and enter the website URL.
 
+Then choose which tool you want to use.
 
-## Errors
-Need to enter the emails that will send and receive.
-
-Disable the less secure apps in your google account to the **sender tool** works <a href="https://myaccount.google.com/lesssecureapps">click here</a>
-
-**Note:** You can change the wordlist and use your own
-
-<h2 align="center">By vLeeH</h2>
+## License
+This project is under the [MIT License](LICENSE).
