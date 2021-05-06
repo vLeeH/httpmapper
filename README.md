@@ -33,12 +33,12 @@ Clone this repository `git clone https://github.com/vLeeH/httpmapper.git`
       - `chmod +x *`
       - `python -m pip install -r requirements.txt`
       - `python install.py`
-      - Done.
+      - Finished.
    - Windows
       - [Python 3, download and install](https://www.python.org/downloads/)
       - `python -m pip install -r requirements.txt`
       - `python install.py`
-      - Done.
+      - Finished.
 
 ## How it works
 Firstable run the file `install.py` and enter the website URL.
