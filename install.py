@@ -6,6 +6,6 @@ try:
     import requests
     import http.cookiejar
 except ImportError: 
-    system("python -m pip install -r requirements.txt")
+    system("python3 -m pip install -r requirements.txt")
 else: 
-    system("python packages/main.py")
+    system("python3 packages/main.py")
