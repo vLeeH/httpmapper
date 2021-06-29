@@ -12,6 +12,8 @@
 <img align="center" src="https://github.com/vLeeH/httpmapper/blob/main/demo/example.png">
 
 ## What is this?
+_For educational purposes._
+
 **httpmapper** is a web crawler made in Python.
 - [X] Source code of an URL.
 - [X] Links of a Website.
