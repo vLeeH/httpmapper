@@ -9,7 +9,7 @@
    <img alt="License" src="https://img.shields.io/github/license/vLeeH/httpmapper.svg">
 </p>
 
-<img align="center" src="https://github.com/vLeeH/httpmapper/blob/main/demo/example.png">
+<img align="center" src="https://github.com/vLeeH/httpmapper/blob/main/example/example.png">
 
 ## What is this?
 _For educational purposes._
