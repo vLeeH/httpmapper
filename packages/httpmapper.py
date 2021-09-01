@@ -13,7 +13,7 @@ import http.cookiejar
 from time import sleep 
 
 __version__='v0.1.3'
-__author__='vlhan'
+__author__='vLeeH'
 
 class Colors: 
     red = "\033[91;1m"
